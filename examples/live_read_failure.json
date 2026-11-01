@@ -1,0 +1,82 @@
+{
+  "status": "insufficient",
+  "answer": "无法确认报销期限：检索到《员工报销制度》和《费用报销规则》两份可能相关的资料，但原文读取服务不可用，未能读取任何片段，因此不能给出具体期限。",
+  "citations": [],
+  "gaps": [
+    "原文读取服务不可用，无法读取 D01/P01 与 D02/P01 的逐字内容",
+    "两份资料是否存在期限规定冲突尚未核实"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "报销期限"
+      },
+      "reason": "查找报销时限规定",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 3
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "passage_id": "P01",
+            "title": "费用报销规则",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D01",
+        "passage_id": "P01"
+      },
+      "reason": "读取员工报销制度相关片段",
+      "result": {
+        "action": "read",
+        "ok": false,
+        "error": "原文读取服务不可用"
+      }
+    },
+    {
+      "step": 3,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D02",
+        "passage_id": "P01"
+      },
+      "reason": "尝试读取另一份规则原文",
+      "result": {
+        "action": "read",
+        "ok": false,
+        "error": "原文读取服务不可用"
+      }
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "parameters": {
+        "status": "insufficient",
+        "answer": "无法确认报销期限：检索到《员工报销制度》和《费用报销规则》两份可能相关的资料，但原文读取服务不可用，未能读取任何片段，因此不能给出具体期限。",
+        "citations": [],
+        "gaps": [
+          "原文读取服务不可用，无法读取 D01/P01 与 D02/P01 的逐字内容",
+          "两份资料是否存在期限规定冲突尚未核实"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

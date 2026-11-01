@@ -1,0 +1,10 @@
+[
+ {"file":"live_answer.json","question":"产品怎么登录？"},
+ {"file":"live_conflict.json","question":"报销期限多久？"},
+ {"file":"live_missing.json","question":"年假有多少天？"},
+ {"file":"live_rephrase.json","question":"费用发生后几天内可以报账？"},
+ {"file":"live_followup.json","question":"那期限是多久？","history":[{"role":"user","content":"我想了解员工报销制度"}]},
+ {"file":"live_failure.json","question":"报销期限多久？","fail":"search"},
+ {"file":"live_read_failure.json","question":"报销期限多久？","fail":"read"},
+ {"file":"live_changed.json","question":"报销期限多久？","data":"data/changed_documents.json"}
+]

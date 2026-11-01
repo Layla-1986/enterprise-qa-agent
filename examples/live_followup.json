@@ -1,0 +1,140 @@
+{
+  "status": "conflict",
+  "answer": "关于员工报销期限，现有资料存在冲突：一份制度规定为费用发生后30天，另一份规则规定为15天，且两份文件均未说明适用范围或优先级，无法自行判断以哪份为准，请确认适用哪份制度。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "passage_id": "P01",
+      "quote": "员工报销期限为费用发生后30天。",
+      "version_date": "2026-01-01"
+    },
+    {
+      "doc_id": "D02",
+      "passage_id": "P01",
+      "quote": "员工报销期限为费用发生后15天。",
+      "version_date": "2026-02-01"
+    }
+  ],
+  "gaps": [
+    "两份文件未说明适用范围、优先级或替代关系，无法消解期限冲突"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "员工报销制度 报销期限"
+      },
+      "reason": "结合历史追问报销期限",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 7
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "passage_id": "P01",
+            "title": "费用报销规则",
+            "score": 5
+          },
+          {
+            "doc_id": "D03",
+            "version_date": "2026-03-01",
+            "passage_id": "P01",
+            "title": "产品登录说明",
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D01",
+        "passage_id": "P01"
+      },
+      "reason": "读取员工报销制度原文",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D01",
+          "version_date": "2026-01-01",
+          "passage_id": "P01",
+          "text": "员工报销期限为费用发生后30天。"
+        }
+      }
+    },
+    {
+      "step": 3,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D02",
+        "passage_id": "P01"
+      },
+      "reason": "核对费用报销规则是否冲突",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D02",
+          "version_date": "2026-02-01",
+          "passage_id": "P01",
+          "text": "员工报销期限为费用发生后15天。"
+        }
+      }
+    },
+    {
+      "step": 4,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D03",
+        "passage_id": "P01"
+      },
+      "reason": "确认该片段是否相关",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D03",
+          "version_date": "2026-03-01",
+          "passage_id": "P01",
+          "text": "员工可使用企业邮箱登录产品。"
+        }
+      }
+    },
+    {
+      "step": 5,
+      "action": "finish",
+      "parameters": {
+        "status": "conflict",
+        "answer": "关于员工报销期限，现有资料存在冲突：一份制度规定为费用发生后30天，另一份规则规定为15天，且两份文件均未说明适用范围或优先级，无法自行判断以哪份为准，请确认适用哪份制度。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P01",
+            "quote": "员工报销期限为费用发生后30天。"
+          },
+          {
+            "doc_id": "D02",
+            "passage_id": "P01",
+            "quote": "员工报销期限为费用发生后15天。"
+          }
+        ],
+        "gaps": [
+          "两份文件未说明适用范围、优先级或替代关系，无法消解期限冲突"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

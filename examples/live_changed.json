@@ -1,0 +1,94 @@
+{
+  "status": "answered",
+  "answer": "根据《员工报销制度》，员工报销期限为费用发生后45天。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "passage_id": "P01",
+      "quote": "员工报销期限为费用发生后45天。",
+      "version_date": "2026-04-01"
+    }
+  ],
+  "gaps": [],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "报销期限"
+      },
+      "reason": "查找报销期限相关规定",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-04-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D01",
+        "passage_id": "P01"
+      },
+      "reason": "读取报销期限相关原文",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D01",
+          "version_date": "2026-04-01",
+          "passage_id": "P01",
+          "text": "员工报销期限为费用发生后45天。"
+        }
+      }
+    },
+    {
+      "step": 3,
+      "action": "search",
+      "parameters": {
+        "query": "报销 期限 费用发生 天"
+      },
+      "reason": "核查是否存在其他报销期限规定或冲突",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-04-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 5
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "parameters": {
+        "status": "answered",
+        "answer": "根据《员工报销制度》，员工报销期限为费用发生后45天。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P01",
+            "quote": "员工报销期限为费用发生后45天。"
+          }
+        ],
+        "gaps": []
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

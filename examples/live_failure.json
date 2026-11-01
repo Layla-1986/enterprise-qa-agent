@@ -1,0 +1,50 @@
+{
+  "status": "insufficient",
+  "answer": "检索服务当前不可用，无法获取公司报销期限的相关规定原文，因此暂时无法回答。请稍后重试或提供相关制度文档。",
+  "citations": [],
+  "gaps": [
+    "检索服务不可用，未能读取任何报销期限相关制度片段"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "报销期限"
+      },
+      "reason": "查找公司报销期限相关规定",
+      "result": {
+        "action": "search",
+        "ok": false,
+        "error": "检索服务不可用"
+      }
+    },
+    {
+      "step": 2,
+      "action": "search",
+      "parameters": {
+        "query": "费用报销 时限 规定"
+      },
+      "reason": "更换检索词重试检索服务",
+      "result": {
+        "action": "search",
+        "ok": false,
+        "error": "检索服务不可用"
+      }
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "parameters": {
+        "status": "insufficient",
+        "answer": "检索服务当前不可用，无法获取公司报销期限的相关规定原文，因此暂时无法回答。请稍后重试或提供相关制度文档。",
+        "citations": [],
+        "gaps": [
+          "检索服务不可用，未能读取任何报销期限相关制度片段"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

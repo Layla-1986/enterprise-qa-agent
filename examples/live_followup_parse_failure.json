@@ -1,0 +1,45 @@
+{
+  "status": "model_error",
+  "answer": "模型调用失败，无法完成问答。",
+  "citations": [],
+  "gaps": [
+    "Extra data: line 1 column 74 (char 73)"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "员工报销制度 报销期限"
+      },
+      "reason": "结合历史追问，检索报销制度中的期限规定",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 7
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "passage_id": "P01",
+            "title": "费用报销规则",
+            "score": 5
+          },
+          {
+            "doc_id": "D03",
+            "version_date": "2026-03-01",
+            "passage_id": "P01",
+            "title": "产品登录说明",
+            "score": 1
+          }
+        ]
+      }
+    }
+  ]
+}

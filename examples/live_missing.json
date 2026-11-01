@@ -1,0 +1,63 @@
+{
+  "status": "insufficient",
+  "answer": "未能在知识库中检索到关于年假天数的规定，无法给出具体天数。",
+  "citations": [],
+  "gaps": [
+    "知识库中缺少年休假/年假天数的相关制度或规定"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "年假 天数 规定"
+      },
+      "reason": "查找年假天数的相关规定",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": []
+      }
+    },
+    {
+      "step": 2,
+      "action": "search",
+      "parameters": {
+        "query": "带薪年休假 天数"
+      },
+      "reason": "换用规范表述检索年休假天数",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": []
+      }
+    },
+    {
+      "step": 3,
+      "action": "search",
+      "parameters": {
+        "query": "年休假"
+      },
+      "reason": "扩大检索词范围查找年休假制度",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": []
+      }
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "parameters": {
+        "status": "insufficient",
+        "answer": "未能在知识库中检索到关于年假天数的规定，无法给出具体天数。",
+        "citations": [],
+        "gaps": [
+          "知识库中缺少年休假/年假天数的相关制度或规定"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}
