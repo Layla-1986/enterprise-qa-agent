@@ -1,0 +1,57 @@
+[
+  {
+    "question": "报销期限多久",
+    "relevant": [
+      "D01/P01",
+      "D02/P01"
+    ]
+  },
+  {
+    "question": "报账期限",
+    "relevant": [
+      "D01/P01",
+      "D02/P01"
+    ]
+  },
+  {
+    "question": "报账",
+    "relevant": [
+      "D01/P01",
+      "D02/P01"
+    ]
+  },
+  {
+    "question": "费用报销规则",
+    "relevant": [
+      "D01/P01",
+      "D02/P01"
+    ]
+  },
+  {
+    "question": "报销几天",
+    "relevant": [
+      "D01/P01",
+      "D02/P01"
+    ]
+  },
+  {
+    "question": "产品如何登录",
+    "relevant": [
+      "D03/P01"
+    ]
+  },
+  {
+    "question": "邮箱登录产品",
+    "relevant": [
+      "D03/P01"
+    ]
+  },
+  {
+    "question": "年假多少天",
+    "relevant": []
+  },
+  {
+    "question": "员工食堂地址",
+    "relevant": []
+  }
+]

@@ -1,0 +1,221 @@
+{
+  "baseline": {
+    "macro_recall": 0.8571428571428571,
+    "negative_false_positive_rate": 0.5,
+    "cases": [
+      {
+        "question": "报销期限多久",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报账期限",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报账",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [],
+        "recall": 0.0,
+        "false_positive": null
+      },
+      {
+        "question": "费用报销规则",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D02/P01",
+          "D01/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报销几天",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "产品如何登录",
+        "expected": [
+          "D03/P01"
+        ],
+        "retrieved": [
+          "D03/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "邮箱登录产品",
+        "expected": [
+          "D03/P01"
+        ],
+        "retrieved": [
+          "D03/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "年假多少天",
+        "expected": [],
+        "retrieved": [],
+        "recall": null,
+        "false_positive": false
+      },
+      {
+        "question": "员工食堂地址",
+        "expected": [],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01",
+          "D03/P01"
+        ],
+        "recall": null,
+        "false_positive": true
+      }
+    ]
+  },
+  "current": {
+    "macro_recall": 1.0,
+    "negative_false_positive_rate": 0.5,
+    "cases": [
+      {
+        "question": "报销期限多久",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报账期限",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报账",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "费用报销规则",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D02/P01",
+          "D01/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "报销几天",
+        "expected": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "产品如何登录",
+        "expected": [
+          "D03/P01"
+        ],
+        "retrieved": [
+          "D03/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "邮箱登录产品",
+        "expected": [
+          "D03/P01"
+        ],
+        "retrieved": [
+          "D03/P01"
+        ],
+        "recall": 1.0,
+        "false_positive": null
+      },
+      {
+        "question": "年假多少天",
+        "expected": [],
+        "retrieved": [],
+        "recall": null,
+        "false_positive": false
+      },
+      {
+        "question": "员工食堂地址",
+        "expected": [],
+        "retrieved": [
+          "D01/P01",
+          "D02/P01",
+          "D03/P01"
+        ],
+        "recall": null,
+        "false_positive": true
+      }
+    ]
+  }
+}

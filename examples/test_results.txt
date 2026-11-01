@@ -10,6 +10,6 @@ test_search_does_not_silently_truncate (test_agent.AgentTests.test_search_does_n
 test_unread_search_result_blocks_answer (test_agent.AgentTests.test_unread_search_result_blocks_answer) ... ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.029s
+Ran 10 tests in 0.019s
 
 OK
