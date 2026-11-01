@@ -13,7 +13,7 @@
 | 注入原文读取故障 | 说明失败及缺口 | ../examples/live_read_failure.json |
 | 更换为单份 45 天制度 | 引用变更后的内容 | ../examples/live_changed.json |
 
-本次真实模型为 deepseek-chat；每项一次，非统计评估。冲突路径为 search → read → read → finish；故障路径为 search → search → finish，展示了模型根据不同结果选择动作。离线单元测试结果见 ../examples/test_results.txt（10 项通过），覆盖变更、缺失、故障、步数上限伪造引用、跳过检索读取和重复引用冒充冲突。真实模型对恶意文档及大规模数据未测试。字符匹配可能漏掉冲突；引用校验不证明答案语义正确。
+本次真实模型为 deepseek-chat；每项一次，非统计评估。冲突路径为 search → read → read → finish；故障路径为 search → search → finish，展示了模型根据不同结果选择动作。离线单元测试结果见 ../examples/test_results.txt（13 项通过），覆盖变更、缺失、故障、步数上限伪造引用、跳过检索读取和重复引用冒充冲突。真实模型对恶意文档及大规模数据未测试。字符匹配可能漏掉冲突；引用校验不证明答案语义正确。
 
 完整输入和追问历史见 ../examples/inputs.json；`python -X utf8 examples/check_records.py` 检查状态、原文逐字引用和故障记录，不能替代语义判断。`python -X utf8 examples/run_live.py` 可使用当前配置重新运行，会覆盖现有记录且可能产生费用；模型输出非确定性。运行环境为 Windows、Python 3.11.3、deepseek-chat，数据与代码在本项目内。
 
@@ -31,3 +31,5 @@
 “报账”命中依赖已配置的“报账→报销”规则。这些样本规模很小，且同义词与开发规则并非独立设计，不能作为泛化性能或生产准确率；误召回也说明需要后续改进。召回统计未评估排序、语义支持或最终问答成功率。
 
 最初对无上下文的“期限是多久？”模型从检索结果中猜测了报销主题，记录在 [模糊问题失败](../examples/live_ambiguous_failure.json)。随后增加通用澄清指令，对另一句“需要多长时间？”单次运行返回 clarification，请用户说明事项，见 [澄清记录](../examples/live_clarification.json)。这是提示层改进，模型仍可能误判，不能保证所有模糊问题都会触发澄清。更改提示后，另行运行 [明确回答](../examples/current_answer.json)、[冲突](../examples/current_conflict.json) 和 [检索失败](../examples/current_failure.json)；原 `live_*.json` 中其他用例是此前版本的运行记录，并非本轮全部重跑。
+
+本轮新增回归测试覆盖引用字段为数组、空答复及资料缺口类型错误，修复前分别触发异常或被错误接受，修复后 13 项离线测试通过。修改后分别以单次真实模型调用验证 [正常回答](../examples/reliability_answer.json)、[文档冲突](../examples/reliability_conflict.json)、[主动澄清](../examples/reliability_clarification.json)；不代表其他旧记录已重新执行或多次稳定性。

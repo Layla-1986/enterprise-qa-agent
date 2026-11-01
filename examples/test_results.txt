@@ -1,15 +1,18 @@
 test_conflict_and_changed_source (test_agent.AgentTests.test_conflict_and_changed_source) ... ok
 test_direct_read_cannot_bypass_search (test_agent.AgentTests.test_direct_read_cannot_bypass_search) ... ok
 test_duplicate_conflict_citations_rejected (test_agent.AgentTests.test_duplicate_conflict_citations_rejected) ... ok
+test_empty_answer_cannot_finish (test_agent.AgentTests.test_empty_answer_cannot_finish) ... ok
 test_failed_search_after_read_blocks_answer (test_agent.AgentTests.test_failed_search_after_read_blocks_answer) ... ok
 test_failure (test_agent.AgentTests.test_failure) ... ok
 test_fake_quote_rejected (test_agent.AgentTests.test_fake_quote_rejected) ... ok
+test_invalid_gaps_cannot_finish (test_agent.AgentTests.test_invalid_gaps_cannot_finish) ... ok
 test_limit (test_agent.AgentTests.test_limit) ... ok
+test_malformed_citation_does_not_crash (test_agent.AgentTests.test_malformed_citation_does_not_crash) ... ok
 test_missing (test_agent.AgentTests.test_missing) ... ok
 test_search_does_not_silently_truncate (test_agent.AgentTests.test_search_does_not_silently_truncate) ... ok
 test_unread_search_result_blocks_answer (test_agent.AgentTests.test_unread_search_result_blocks_answer) ... ok
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.019s
+Ran 13 tests in 0.031s
 
 OK

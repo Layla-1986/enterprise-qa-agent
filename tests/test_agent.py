@@ -49,4 +49,14 @@ class AgentTests(unittest.TestCase):
     def test_search_does_not_silently_truncate(self):
         self.docs=[{'id':f'D{i:02}', 'version_date':'2026-01-01','title':'报销制度','passages':[{'id':'P01','text':'报销期限为30天。'}]} for i in range(10)]
         self.save(); self.assertEqual(len(Tools(self.path).search('报销期限')),10)
+    def test_malformed_citation_does_not_crash(self):
+        actions=iter([{'action':'finish','status':'answered','answer':'x','citations':[{'doc_id':[],'passage_id':'P01','quote':'x'}]}])
+        result=run('报销',Tools(self.path),lambda _:next(actions),max_steps=1)
+        self.assertEqual(result['status'],'incomplete')
+    def test_empty_answer_cannot_finish(self):
+        result=run('问题',Tools(self.path),lambda _: {'action':'finish','status':'clarification','answer':'','citations':[],'gaps':[]},max_steps=1)
+        self.assertEqual(result['status'],'incomplete')
+    def test_invalid_gaps_cannot_finish(self):
+        result=run('问题',Tools(self.path),lambda _: {'action':'finish','status':'insufficient','answer':'缺少资料','citations':[],'gaps':'缺资料'},max_steps=1)
+        self.assertEqual(result['status'],'incomplete')
 if __name__=='__main__': unittest.main()

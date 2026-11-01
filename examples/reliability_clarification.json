@@ -1,0 +1,24 @@
+{
+  "status": "clarification",
+  "answer": "请问您指的是哪项事项需要多长时间？例如审批、办理、审核或某个流程，请补充具体事项或适用对象。",
+  "citations": [],
+  "gaps": [
+    "问题缺少具体事项或适用对象，无法确定检索范围"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "finish",
+      "parameters": {
+        "status": "clarification",
+        "answer": "请问您指的是哪项事项需要多长时间？例如审批、办理、审核或某个流程，请补充具体事项或适用对象。",
+        "citations": [],
+        "gaps": [
+          "问题缺少具体事项或适用对象，无法确定检索范围"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

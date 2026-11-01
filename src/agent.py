@@ -76,8 +76,8 @@ def run(question, tools, model, history=None, max_steps=12):
         kind=action.get('action'); entry={'step':step,'action':kind,'parameters':{k:v for k,v in action.items() if k not in ('action','reason')},'reason':action.get('reason','')}
         if kind=='finish':
             citations=action.get('citations',[]); status=action.get('status')
-            valid=isinstance(citations,list) and all(isinstance(c,dict) and isinstance(c.get('quote'),str) and c['quote'] and (c.get('doc_id'),c.get('passage_id')) in read and c['quote'] in read[(c['doc_id'],c['passage_id'])]['text'] for c in citations)
-            if status not in ('answered','conflict','insufficient','clarification') or not valid or (status=='answered' and (found-set(read) or failures)) or (status in ('answered','conflict') and not citations) or (status=='conflict' and len({(c['doc_id'],c['passage_id']) for c in citations})<2):
+            valid=isinstance(citations,list) and all(isinstance(c,dict) and isinstance(c.get('doc_id'),str) and isinstance(c.get('passage_id'),str) and isinstance(c.get('quote'),str) and c['quote'] and (c.get('doc_id'),c.get('passage_id')) in read and c['quote'] in read[(c['doc_id'],c['passage_id'])]['text'] for c in citations)
+            if not isinstance(action.get('answer'),str) or not action['answer'].strip() or not isinstance(action.get('gaps'),list) or not all(isinstance(g,str) for g in action['gaps']) or status not in ('answered','conflict','insufficient','clarification') or not valid or (status=='answered' and (found-set(read) or failures)) or (status in ('answered','conflict') and not citations) or (status=='conflict' and len({(c['doc_id'],c['passage_id']) for c in citations})<2):
                 entry['result']='引用或状态校验失败'; trace.append(entry)
                 messages.extend([{'role':'assistant','content':json.dumps(action,ensure_ascii=False)},{'role':'user','content':'工具结果:'+json.dumps({'action':'finish','ok':False,'error':'状态或引用无效，或仍有未读检索结果/未恢复的工具错误；请继续核查或返回资料不足'},ensure_ascii=False)}]); continue
             entry['result']='完成'; trace.append(entry)

@@ -1,0 +1,114 @@
+{
+  "status": "conflict",
+  "answer": "关于报销期限，现有两份制度规定不一致：《员工报销制度》（2026-01-01）规定为费用发生后30天；《费用报销规则》（2026-02-01）规定为费用发生后15天。两者适用范围未明确，无法自行判断以哪份为准，请确认适用哪份制度（或是否以较新版本为准）。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "passage_id": "P01",
+      "quote": "员工报销期限为费用发生后30天。",
+      "version_date": "2026-01-01"
+    },
+    {
+      "doc_id": "D02",
+      "passage_id": "P01",
+      "quote": "员工报销期限为费用发生后15天。",
+      "version_date": "2026-02-01"
+    }
+  ],
+  "gaps": [
+    "两份制度均未说明适用范围及相互优先级"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "报销期限"
+      },
+      "reason": "查找报销期限相关规定",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D01",
+            "version_date": "2026-01-01",
+            "passage_id": "P01",
+            "title": "员工报销制度",
+            "score": 3
+          },
+          {
+            "doc_id": "D02",
+            "version_date": "2026-02-01",
+            "passage_id": "P01",
+            "title": "费用报销规则",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D01",
+        "passage_id": "P01"
+      },
+      "reason": "读取员工报销制度相关片段",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D01",
+          "version_date": "2026-01-01",
+          "passage_id": "P01",
+          "text": "员工报销期限为费用发生后30天。"
+        }
+      }
+    },
+    {
+      "step": 3,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D02",
+        "passage_id": "P01"
+      },
+      "reason": "读取费用报销规则相关片段以核查冲突",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D02",
+          "version_date": "2026-02-01",
+          "passage_id": "P01",
+          "text": "员工报销期限为费用发生后15天。"
+        }
+      }
+    },
+    {
+      "step": 4,
+      "action": "finish",
+      "parameters": {
+        "status": "conflict",
+        "answer": "关于报销期限，现有两份制度规定不一致：《员工报销制度》（2026-01-01）规定为费用发生后30天；《费用报销规则》（2026-02-01）规定为费用发生后15天。两者适用范围未明确，无法自行判断以哪份为准，请确认适用哪份制度（或是否以较新版本为准）。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P01",
+            "quote": "员工报销期限为费用发生后30天。"
+          },
+          {
+            "doc_id": "D02",
+            "passage_id": "P01",
+            "quote": "员工报销期限为费用发生后15天。"
+          }
+        ],
+        "gaps": [
+          "两份制度均未说明适用范围及相互优先级"
+        ]
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}

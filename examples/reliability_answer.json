@@ -1,0 +1,73 @@
+{
+  "status": "answered",
+  "answer": "员工可使用企业邮箱登录产品。",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "passage_id": "P01",
+      "quote": "员工可使用企业邮箱登录产品。",
+      "version_date": "2026-03-01"
+    }
+  ],
+  "gaps": [],
+  "trace": [
+    {
+      "step": 1,
+      "action": "search",
+      "parameters": {
+        "query": "产品登录 登录方式 登录流程"
+      },
+      "reason": "查找产品登录相关说明",
+      "result": {
+        "action": "search",
+        "ok": true,
+        "result": [
+          {
+            "doc_id": "D03",
+            "version_date": "2026-03-01",
+            "passage_id": "P01",
+            "title": "产品登录说明",
+            "score": 3
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "action": "read",
+      "parameters": {
+        "doc_id": "D03",
+        "passage_id": "P01"
+      },
+      "reason": "读取登录说明原文",
+      "result": {
+        "action": "read",
+        "ok": true,
+        "result": {
+          "doc_id": "D03",
+          "version_date": "2026-03-01",
+          "passage_id": "P01",
+          "text": "员工可使用企业邮箱登录产品。"
+        }
+      }
+    },
+    {
+      "step": 3,
+      "action": "finish",
+      "parameters": {
+        "status": "answered",
+        "answer": "员工可使用企业邮箱登录产品。",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "passage_id": "P01",
+            "quote": "员工可使用企业邮箱登录产品。"
+          }
+        ],
+        "gaps": []
+      },
+      "reason": "",
+      "result": "完成"
+    }
+  ]
+}
